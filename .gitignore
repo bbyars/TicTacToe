@@ -1,0 +1,4 @@
+_Resharper*
+bin/
+obj/
+*.suo
