@@ -43,6 +43,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Features\TicTacToeUI.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TicTacToeUI.feature</DependentUpon>
+    </Compile>
     <Compile Include="Features\TicTacToeGame.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -59,6 +64,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Features\TicTacToeUI.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>TicTacToeUI.feature.cs</LastGenOutput>
+    </None>
     <None Include="Features\TicTacToeGame.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>TicTacToeGame.feature.cs</LastGenOutput>

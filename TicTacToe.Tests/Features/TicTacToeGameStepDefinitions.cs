@@ -9,6 +9,12 @@ namespace TicTacToe.Tests.Features
     {
         private Game game;
 
+        [Given(@"a new game")]
+        public void GivenANewGame()
+        {
+            game = new Game();
+        }
+
         [Given(@"a new game that looks like")]
         public void GivenANewGameThatLooksLike(Table table)
         {
@@ -25,10 +31,22 @@ namespace TicTacToe.Tests.Features
             }
         }
 
+        [Given(@"I am the X player")]
+        public void GivenIAmTheXPlayer()
+        {
+            ScenarioContext.Current.Pending();
+        }
+
         [Then(@"player ([XO]) is declared the winner")]
         public void ThenPlayerXIsDeclaredTheWinner(string player)
         {
             Assert.That(game.Winner, Is.EqualTo(player));
+        }
+
+        [Then(@"the board should look like")]
+        public void ThenTheBoardShouldLookLike(Table table)
+        {
+            ScenarioContext.Current.Pending();
         }
     }
 }
