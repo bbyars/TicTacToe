@@ -55,7 +55,12 @@ namespace TicTacToe
 
         public virtual bool IsOver()
         {
-            return Winner != "";
+            return IsDraw() || Winner != "";
+        }
+
+        public bool IsDraw()
+        {
+            return Winner == "" && !AvailableMoves.Any();
         }
 
         public virtual string Winner

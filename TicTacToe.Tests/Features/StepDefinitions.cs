@@ -54,6 +54,12 @@ namespace TicTacToe.Tests.Features
         {
             Assert.That(game.Winner, Is.EqualTo(player));
         }
+        
+        [Then(@"a draw is declared")]
+        public void ThenADrawIsDeclared()
+        {
+            Assert.That(game.IsDraw(), Is.True);
+        }
 
         [Then(@"the board should look like")]
         public void ThenTheBoardShouldLookLike(Table table)

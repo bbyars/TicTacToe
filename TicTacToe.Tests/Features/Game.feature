@@ -38,3 +38,17 @@ Scenario: Three in a diagonal
         | 5 | 6 |
         | 9 |   |
     Then player X is declared the winner
+
+Scenario: Draw
+    Given a new game that looks like
+        | 1 | 2 | 3 |
+        | 4 | 5 | 6 |
+        | 7 | 8 | 9 |
+    When we have the following sequence of moves
+        | X | O |
+        | 1 | 2 |
+        | 3 | 4 |
+        | 5 | 7 |
+        | 6 | 9 |
+        | 8 |   |
+    Then a draw is declared

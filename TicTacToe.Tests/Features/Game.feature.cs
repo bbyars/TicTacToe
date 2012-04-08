@@ -193,6 +193,55 @@ this.ScenarioSetup(scenarioInfo);
 #line hidden
             this.ScenarioCleanup();
         }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Draw")]
+        public virtual void Draw()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Draw", ((string[])(null)));
+#line 42
+this.ScenarioSetup(scenarioInfo);
+#line hidden
+            TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
+                        "1",
+                        "2",
+                        "3"});
+            table7.AddRow(new string[] {
+                        "4",
+                        "5",
+                        "6"});
+            table7.AddRow(new string[] {
+                        "7",
+                        "8",
+                        "9"});
+#line 43
+    testRunner.Given("a new game that looks like", ((string)(null)), table7);
+#line hidden
+            TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
+                        "X",
+                        "O"});
+            table8.AddRow(new string[] {
+                        "1",
+                        "2"});
+            table8.AddRow(new string[] {
+                        "3",
+                        "4"});
+            table8.AddRow(new string[] {
+                        "5",
+                        "7"});
+            table8.AddRow(new string[] {
+                        "6",
+                        "9"});
+            table8.AddRow(new string[] {
+                        "8",
+                        ""});
+#line 47
+    testRunner.When("we have the following sequence of moves", ((string)(null)), table8);
+#line 54
+    testRunner.Then("a draw is declared");
+#line hidden
+            this.ScenarioCleanup();
+        }
     }
 }
 #pragma warning restore
