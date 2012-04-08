@@ -7,7 +7,17 @@ namespace TicTacToe
     {
         private static readonly string[][] WinningMoves = new[]
         {
-            new[] { "1", "2", "3" }
+            // rows
+            new[] { "1", "2", "3" },
+            new[] { "4", "5", "6" },
+            new[] { "7", "8", "9" },
+            // columns
+            new[] { "1", "4", "7" },
+            new[] { "2", "5", "8" },
+            new[] { "3", "6", "9" },
+            // diagonals
+            new[] { "1", "5", "9" },
+            new[] { "3", "5", "7" }
         };
 
         private readonly IDictionary<string, string> moves = new Dictionary<string, string>();

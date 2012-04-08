@@ -66,10 +66,10 @@ namespace TicTacToe.Tests.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Three in a row horizontal")]
-        public virtual void ThreeInARowHorizontal()
+        [NUnit.Framework.DescriptionAttribute("Three in a row")]
+        public virtual void ThreeInARow()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Three in a row horizontal", ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Three in a row", ((string[])(null)));
 #line 7
 this.ScenarioSetup(scenarioInfo);
 #line hidden
@@ -103,6 +103,92 @@ this.ScenarioSetup(scenarioInfo);
 #line 12
     testRunner.When("we have the following sequence of moves", ((string)(null)), table2);
 #line 17
+    testRunner.Then("player X is declared the winner");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Three in a column")]
+        public virtual void ThreeInAColumn()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Three in a column", ((string[])(null)));
+#line 19
+this.ScenarioSetup(scenarioInfo);
+#line hidden
+            TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
+                        "1",
+                        "2",
+                        "3"});
+            table3.AddRow(new string[] {
+                        "4",
+                        "5",
+                        "6"});
+            table3.AddRow(new string[] {
+                        "7",
+                        "8",
+                        "9"});
+#line 20
+ testRunner.Given("a new game that looks like", ((string)(null)), table3);
+#line hidden
+            TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
+                        "X",
+                        "O"});
+            table4.AddRow(new string[] {
+                        "1",
+                        "3"});
+            table4.AddRow(new string[] {
+                        "2",
+                        "6"});
+            table4.AddRow(new string[] {
+                        "4",
+                        "9"});
+#line 24
+    testRunner.When("we have the following sequence of moves", ((string)(null)), table4);
+#line 29
+    testRunner.Then("player O is declared the winner");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Three in a diagonal")]
+        public virtual void ThreeInADiagonal()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Three in a diagonal", ((string[])(null)));
+#line 31
+this.ScenarioSetup(scenarioInfo);
+#line hidden
+            TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
+                        "1",
+                        "2",
+                        "3"});
+            table5.AddRow(new string[] {
+                        "4",
+                        "5",
+                        "6"});
+            table5.AddRow(new string[] {
+                        "7",
+                        "8",
+                        "9"});
+#line 32
+ testRunner.Given("a new game that looks like", ((string)(null)), table5);
+#line hidden
+            TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
+                        "X",
+                        "O"});
+            table6.AddRow(new string[] {
+                        "1",
+                        "3"});
+            table6.AddRow(new string[] {
+                        "5",
+                        "6"});
+            table6.AddRow(new string[] {
+                        "9",
+                        ""});
+#line 36
+    testRunner.When("we have the following sequence of moves", ((string)(null)), table6);
+#line 41
     testRunner.Then("player X is declared the winner");
 #line hidden
             this.ScenarioCleanup();
