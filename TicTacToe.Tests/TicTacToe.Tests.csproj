@@ -43,6 +43,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConsoleUITest.cs" />
     <Compile Include="Features\UI.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -55,7 +56,10 @@
     </Compile>
     <Compile Include="Features\StepDefinitions.cs" />
     <Compile Include="GameTest.cs" />
+    <Compile Include="HumanPlayerTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StubTextReader.cs" />
+    <Compile Include="StubTextReaderTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TicTacToe\TicTacToe.csproj">

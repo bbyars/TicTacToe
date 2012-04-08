@@ -40,7 +40,9 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConsoleUI.cs" />
     <Compile Include="Game.cs" />
+    <Compile Include="HumanPlayer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

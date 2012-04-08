@@ -70,7 +70,7 @@ namespace TicTacToe.Tests.Features
         public virtual void ThreeInARow()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Three in a row", ((string[])(null)));
-#line 7
+#line 6
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
@@ -85,7 +85,7 @@ this.ScenarioSetup(scenarioInfo);
                         "7",
                         "8",
                         "9"});
-#line 8
+#line 7
  testRunner.Given("a new game that looks like", ((string)(null)), table1);
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
@@ -100,9 +100,9 @@ this.ScenarioSetup(scenarioInfo);
             table2.AddRow(new string[] {
                         "3",
                         ""});
-#line 12
+#line 11
     testRunner.When("we have the following sequence of moves", ((string)(null)), table2);
-#line 17
+#line 16
     testRunner.Then("player X is declared the winner");
 #line hidden
             this.ScenarioCleanup();
@@ -113,7 +113,7 @@ this.ScenarioSetup(scenarioInfo);
         public virtual void ThreeInAColumn()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Three in a column", ((string[])(null)));
-#line 19
+#line 18
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
@@ -128,7 +128,7 @@ this.ScenarioSetup(scenarioInfo);
                         "7",
                         "8",
                         "9"});
-#line 20
+#line 19
  testRunner.Given("a new game that looks like", ((string)(null)), table3);
 #line hidden
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
@@ -143,9 +143,9 @@ this.ScenarioSetup(scenarioInfo);
             table4.AddRow(new string[] {
                         "4",
                         "9"});
-#line 24
+#line 23
     testRunner.When("we have the following sequence of moves", ((string)(null)), table4);
-#line 29
+#line 28
     testRunner.Then("player O is declared the winner");
 #line hidden
             this.ScenarioCleanup();
@@ -156,7 +156,7 @@ this.ScenarioSetup(scenarioInfo);
         public virtual void ThreeInADiagonal()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Three in a diagonal", ((string[])(null)));
-#line 31
+#line 30
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
@@ -171,7 +171,7 @@ this.ScenarioSetup(scenarioInfo);
                         "7",
                         "8",
                         "9"});
-#line 32
+#line 31
  testRunner.Given("a new game that looks like", ((string)(null)), table5);
 #line hidden
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
@@ -186,9 +186,9 @@ this.ScenarioSetup(scenarioInfo);
             table6.AddRow(new string[] {
                         "9",
                         ""});
-#line 36
+#line 35
     testRunner.When("we have the following sequence of moves", ((string)(null)), table6);
-#line 41
+#line 40
     testRunner.Then("player X is declared the winner");
 #line hidden
             this.ScenarioCleanup();

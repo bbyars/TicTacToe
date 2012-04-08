@@ -70,13 +70,13 @@ namespace TicTacToe.Tests.Features
         public virtual void NewGame()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("New game", ((string[])(null)));
-#line 7
+#line 6
 this.ScenarioSetup(scenarioInfo);
-#line 8
+#line 7
  testRunner.Given("a new game");
-#line 9
+#line 8
  testRunner.And("I am the X player");
-#line 10
+#line 9
  testRunner.When("I am prompted to make my move");
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
@@ -91,8 +91,52 @@ this.ScenarioSetup(scenarioInfo);
                         "7",
                         "8",
                         "9"});
-#line 11
+#line 10
  testRunner.Then("the board should look like", ((string)(null)), table1);
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Game in progress")]
+        public virtual void GameInProgress()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Game in progress", ((string[])(null)));
+#line 15
+this.ScenarioSetup(scenarioInfo);
+#line 16
+ testRunner.Given("a new game");
+#line 17
+ testRunner.And("I am the X player");
+#line hidden
+            TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+                        "X",
+                        "O"});
+            table2.AddRow(new string[] {
+                        "1",
+                        "7"});
+            table2.AddRow(new string[] {
+                        "2",
+                        "8"});
+#line 18
+    testRunner.And("we have the following sequence of moves", ((string)(null)), table2);
+#line 22
+ testRunner.When("I am prompted to make my move");
+#line hidden
+            TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
+                        "X",
+                        "X",
+                        "3"});
+            table3.AddRow(new string[] {
+                        "4",
+                        "5",
+                        "6"});
+            table3.AddRow(new string[] {
+                        "O",
+                        "O",
+                        "9"});
+#line 23
+ testRunner.Then("the board should look like", ((string)(null)), table3);
 #line hidden
             this.ScenarioCleanup();
         }

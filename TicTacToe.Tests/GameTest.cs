@@ -96,6 +96,41 @@ namespace TicTacToe.Tests
             Assert.That(game.Winner, Is.EqualTo("O"));
         }
 
+        [Test]
+        public void MovesForShouldShowHistoryOfMoves()
+        {
+            MakeMoves("X1", "O3", "X2", "O5", "X9");
+            Assert.That(game.MovesFor("X"), Is.EqualTo(new[] { "1", "2", "9" }));
+            Assert.That(game.MovesFor("O"), Is.EqualTo(new[] { "3", "5" }));
+        }
+
+        [Test]
+        public void AvailableMovesShouldShowAvailableMoves()
+        {
+            MakeMoves("X1", "O3", "X2", "O5", "X9");
+            Assert.That(game.AvailableMoves, Is.EqualTo(new[] {"4", "6", "7", "8"}));
+        }
+
+        [Test]
+        public void ValidMovesAreAllowed()
+        {
+            Assert.That(game.IsAllowedMove("1"));
+        }
+
+        [Test]
+        public void MovesAlreadyTakenAreNotAllowed()
+        {
+            MakeMoves("X1", "O3", "X2", "O5", "X9");
+            Assert.That(game.IsAllowedMove("1"), Is.False);
+        }
+
+        [Test]
+        public void InvalidInputIsNotAllowed()
+        {
+            Assert.That(game.IsAllowedMove("INVALID"), Is.False);
+            Assert.That(game.IsAllowedMove("12"), Is.False);
+        }
+
         private void MakeMoves(params string[] moves)
         {
             foreach (var move in moves)

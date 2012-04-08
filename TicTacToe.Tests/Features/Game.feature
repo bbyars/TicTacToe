@@ -3,7 +3,6 @@
     I want to see the results of the game
     So that I can know who won
 
-
 Scenario: Three in a row
 	Given a new game that looks like
         | 1 | 2 | 3 |

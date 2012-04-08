@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.IO;
 using NUnit.Framework;
 using NUnit.Framework.SyntaxHelpers;
 using TechTalk.SpecFlow;
@@ -21,6 +23,17 @@ namespace TicTacToe.Tests.Features
             game = new Game();
         }
 
+        [Given(@"I am the ([XO]) player")]
+        public void GivenIAmPlayer(string player)
+        {
+        }
+
+        [Given(@"we have the following sequence of moves")]
+        public void GivenWeHaveTheFollowingSequenceOfMoves(Table table)
+        {
+            WhenWeHaveTheFollowingSequenceOfMoves(table);
+        }
+
         [When(@"we have the following sequence of moves")]
         public void WhenWeHaveTheFollowingSequenceOfMoves(Table table)
         {
@@ -31,10 +44,9 @@ namespace TicTacToe.Tests.Features
             }
         }
 
-        [Given(@"I am the X player")]
-        public void GivenIAmTheXPlayer()
+        [When(@"I am prompted to make my move")]
+        public void WhenIAmPromptedToMakeMyMove()
         {
-            ScenarioContext.Current.Pending();
         }
 
         [Then(@"player ([XO]) is declared the winner")]
@@ -46,7 +58,24 @@ namespace TicTacToe.Tests.Features
         [Then(@"the board should look like")]
         public void ThenTheBoardShouldLookLike(Table table)
         {
-            ScenarioContext.Current.Pending();
+            var input = new StubTextReader();
+            var output = new StringWriter();
+            var player = new HumanPlayer(game, input, output);
+            input.WriteLine(game.AvailableMoves[0]);
+            player.GetNextMove();
+
+            Assert.That(output.ToString(), Text.Contains(GetBoardRepresentation(table)));
+        }
+
+        private static string GetBoardRepresentation(Table table)
+        {
+            var headers = new List<string>(table.Header);
+            return string.Format(@"
+| {0} | {1} | {2} |
+| {3} | {4} | {5} |
+| {6} | {7} | {8} |".Trim(), headers[0], headers[1], headers[2],
+                    table.Rows[0][0], table.Rows[0][1], table.Rows[0][2],
+                    table.Rows[1][0], table.Rows[1][1], table.Rows[1][2]);
         }
     }
 }

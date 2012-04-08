@@ -5,6 +5,7 @@ namespace TicTacToe
 {
     public class Game
     {
+        private static readonly string[] Board = new[] {"1", "2", "3", "4", "5", "6", "7", "8", "9"};
         private static readonly string[][] WinningMoves = new[]
         {
             // rows
@@ -20,13 +21,13 @@ namespace TicTacToe
             new[] { "3", "5", "7" }
         };
 
-        private readonly IDictionary<string, string> moves = new Dictionary<string, string>();
+        private readonly IDictionary<string, IList<string>> moves = new Dictionary<string, IList<string>>();
 
         public Game()
         {
             CurrentPlayer = "X";
-            moves["X"] = "";
-            moves["O"] = "";
+            moves["X"] = new List<string>();
+            moves["O"] = new List<string>();
         }
 
         public virtual string CurrentPlayer { get; private set; }
@@ -35,6 +36,21 @@ namespace TicTacToe
         {
             RecordMoveFor(CurrentPlayer, move);
             ChangePlayers();
+        }
+
+        public virtual string[] MovesFor(string player)
+        {
+            return moves[player].ToArray();
+        }
+
+        public virtual string[] AvailableMoves
+        {
+            get { return Board.Except(MovesFor("X")).Except(MovesFor("O")).ToArray(); }
+        }
+
+        public bool IsAllowedMove(string move)
+        {
+            return AvailableMoves.Contains(move);
         }
 
         public virtual bool IsOver()
@@ -56,7 +72,7 @@ namespace TicTacToe
 
         private void RecordMoveFor(string player, string move)
         {
-            moves[player] += move;
+            moves[player].Add(move);
         }
 
         private void ChangePlayers()
@@ -71,7 +87,7 @@ namespace TicTacToe
 
         private bool HasAllMoves(string player, IEnumerable<string> setOfMoves)
         {
-            return setOfMoves.All(move => moves[player].Contains(move));
+            return setOfMoves.All(move => MovesFor(player).Contains(move));
         }
     }
 }
