@@ -34,7 +34,7 @@ namespace TicTacToe.Tests
         }
 
         [Test]
-        public void GameIsOverWhenOnePlayerHasThreeInARowHorizontally()
+        public void GameIsOverWhenOnePlayerHasThreeInARow()
         {
             game.MakeMove("1");
             game.MakeMove("7");
@@ -46,7 +46,7 @@ namespace TicTacToe.Tests
         }
 
         [Test]
-        public void XPlayerWinsIfGetsThreeInARowHorizontal()
+        public void XPlayerWinsIfGetsThreeInARow()
         {
             game.MakeMove("1");
             game.MakeMove("7");
