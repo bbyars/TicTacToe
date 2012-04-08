@@ -43,6 +43,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Features\TicTacToeGame.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TicTacToeGame.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\TicTacToeGameStepDefinitions.cs" />
+    <Compile Include="GameTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -50,6 +57,12 @@
       <Project>{6B6655CD-9448-492B-B3CF-A92184B2596A}</Project>
       <Name>TicTacToe</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Features\TicTacToeGame.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>TicTacToeGame.feature.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
