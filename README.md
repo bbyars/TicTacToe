@@ -4,6 +4,8 @@ This was written to demonstrate test-driven development techniques by writing a 
 
 Since this was developed as a teaching example, I did not use any mocking library.  There were a couple of places where I felt mocks would have been more expressive - for instance, where MakeMoves is called in ConsoleUITest and HumanPlayerTest to simulate certain game results.
 
+## Sequence
+
 I practiced this a couple of times trying different strategies.  The first time, I tried a purely top-down strategy, and got stuck trying to drive the design through the UI.  The second time, I approached it more bottom-up, test-driving the rules of the game before incorporating the UI.  The basic sequence of events was
 
 1. Write a game feature that describes a player winning a game.
