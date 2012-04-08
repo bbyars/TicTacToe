@@ -37,7 +37,7 @@ namespace TicTacToe.Tests
         [Test]
         public void GetNextMoveShouldShowAllPriorMoves()
         {
-            MakeMoves("X1", "O2", "X3", "O4", "X5", "O6");
+            game.MakeMoves("X1", "O2", "X3", "O4", "X5", "O6");
             input.WriteLine("7");
             player.GetNextMove();
 
@@ -59,7 +59,7 @@ namespace TicTacToe.Tests
         public void GetNextMoveShouldOnlyShowAvailableMoves()
         {
             input.WriteLine("8");
-            MakeMoves("X1", "O2", "X3", "O4", "X5", "O6");
+            game.MakeMoves("X1", "O2", "X3", "O4", "X5", "O6");
             player.GetNextMove();
             Assert.That(output.ToString(), Text.Contains("Select your move (7, 8, 9): "));
         }
@@ -82,17 +82,6 @@ namespace TicTacToe.Tests
             var prompt = "Select your move (1, 2, 3, 4, 5, 6, 7, 8, 9): " + Environment.NewLine;
             Assert.That(output.ToString(), Text.Contains(prompt + prompt));
             Assert.That(result, Is.EqualTo("1"));
-        }
-
-        private void MakeMoves(params string[] moves)
-        {
-            foreach (var move in moves)
-            {
-                var playerName = move.Substring(0, 1);
-                var square = move.Substring(1);
-                Assert.That(playerName, Is.EqualTo(game.CurrentPlayer));
-                game.MakeMove(square);
-            }
         }
     }
 }

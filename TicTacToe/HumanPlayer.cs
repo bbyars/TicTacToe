@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace TicTacToe
 {
-    public class HumanPlayer
+    public class HumanPlayer : IPlayer
     {
         private readonly Game game;
         private readonly TextReader input;

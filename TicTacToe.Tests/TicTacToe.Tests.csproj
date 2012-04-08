@@ -56,6 +56,7 @@
       <DependentUpon>Game.feature</DependentUpon>
     </Compile>
     <Compile Include="Features\StepDefinitions.cs" />
+    <Compile Include="GameExtensions.cs" />
     <Compile Include="GameTest.cs" />
     <Compile Include="HumanPlayerTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

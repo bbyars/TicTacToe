@@ -2,7 +2,7 @@ using System;
 
 namespace TicTacToe
 {
-    public class ComputerPlayer
+    public class ComputerPlayer : IPlayer
     {
         private readonly Game game;
 
