@@ -43,6 +43,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ComputerPlayerTest.cs" />
     <Compile Include="ConsoleUITest.cs" />
     <Compile Include="Features\UI.feature.cs">
       <AutoGen>True</AutoGen>
