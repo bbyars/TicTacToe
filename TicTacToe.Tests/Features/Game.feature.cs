@@ -25,7 +25,7 @@ namespace TicTacToe.Tests.Features
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "TicTacToeGame.feature"
+#line 1 "Game.feature"
 #line hidden
         
         [NUnit.Framework.TestFixtureSetUpAttribute()]

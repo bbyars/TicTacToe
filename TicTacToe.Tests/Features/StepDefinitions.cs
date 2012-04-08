@@ -5,7 +5,7 @@ using TechTalk.SpecFlow;
 namespace TicTacToe.Tests.Features
 {
     [Binding]
-    public class TicTacToeGameStepDefinitions
+    public class StepDefinitions
     {
         private Game game;
 

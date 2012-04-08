@@ -43,17 +43,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Features\TicTacToeUI.feature.cs">
+    <Compile Include="Features\UI.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>TicTacToeUI.feature</DependentUpon>
+      <DependentUpon>UI.feature</DependentUpon>
     </Compile>
-    <Compile Include="Features\TicTacToeGame.feature.cs">
+    <Compile Include="Features\Game.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>TicTacToeGame.feature</DependentUpon>
+      <DependentUpon>Game.feature</DependentUpon>
     </Compile>
-    <Compile Include="Features\TicTacToeGameStepDefinitions.cs" />
+    <Compile Include="Features\StepDefinitions.cs" />
     <Compile Include="GameTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -64,13 +64,13 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Features\TicTacToeUI.feature">
+    <None Include="Features\UI.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>TicTacToeUI.feature.cs</LastGenOutput>
+      <LastGenOutput>UI.feature.cs</LastGenOutput>
     </None>
-    <None Include="Features\TicTacToeGame.feature">
+    <None Include="Features\Game.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>TicTacToeGame.feature.cs</LastGenOutput>
+      <LastGenOutput>Game.feature.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
